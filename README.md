@@ -10,11 +10,18 @@ find duplicates files or folders.<br>
  | -v  | verbose output <br> (optional)|
  | --delete  | delete duplicate <br> (optional)|
 
+
 ```bash
 $ bash dupes.sh -d /etc/usr/local -t folders -v --delete 
-$ bash dupes.sh -d /var/ -t files 
 ```
- 
- # nascompare.sh
- created to compare directory trees of two different nas storage (which should be identical) following a data migration 
- 
+~ order of args does not matter 
+```
+$ bash dupes.sh -t files -d /var/ 
+```
+
+ # dcompare.sh
+compare directory trees (source v. target) with ability to:
+- copy files/folders if absent from target
+- delete files/folders if absent from source
+<br> 
+useful for validating data migration (ie. migrating data from an old NAS to a new)
