@@ -4,10 +4,6 @@
 # find dupl
 #######
 
-where=$1 
-what=$2 
-verbose=$3
-
 run() {
 [[ "$2" -eq "folders" ]] && type="d" || type="f"
 find $1 -mindepth 1 -type $type  \
@@ -20,4 +16,14 @@ find $1 -mindepth 1 -type $type  \
   done
 }
 
-run $where $what $verbose
+while read i ; do 
+  case $i in
+    -d*|--delete) where=$(echo $i | awk '{ print $2 }' ) ;;
+    -t*) what=$(echo $i | awk '{ print $2 }') ;;
+    -v) verbose="-v" ;;
+    --delete) action="delete" ;;
+    --copy) action="copy" ;;
+  esac
+done < <(echo $* | sed 's/ \-/\n-/g' )
+
+run $where $what $verbose $action 
