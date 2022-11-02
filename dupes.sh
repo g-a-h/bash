@@ -21,12 +21,3 @@ find $1 -mindepth 1 -type $type  \
 }
 
 run $where $what $verbose
-
-
-
-#######
-# about 
-# find duplicates in a given directory given:
-#  + where   : given directory 
-#  + what    : files or folders 
-#  + verbose : verbose output 
