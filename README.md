@@ -1,5 +1,5 @@
 # bash-tools
-# a repository of miscellaneous bash scripts
+a repository of miscellaneous bash scripts
 
 # dupes.sh
 find duplicates files or folders given: 
