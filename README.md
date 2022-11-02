@@ -7,7 +7,7 @@ find duplicates files or folders.<br>
  | --- | --- |
  | -d  | search path <br> (required)|
  | -t  | type <br> 'files' or 'folders' <br> (required)|
- | -v  | verbose log <br> (optional)|
+ | -v  | verbose output <br> (optional)|
  | --delete  | delete duplicate <br> (optional)|
 
 ```bash
