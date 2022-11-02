@@ -1,3 +1,3 @@
 # bash-tools
 
-repository of miscellaneous bash scripts
+a repository of miscellaneous bash scripts
