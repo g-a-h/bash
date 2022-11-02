@@ -1,7 +1,7 @@
 # bash-tools
 a repository of miscellaneous bash scripts
 
-# dupes
+# dupes.sh
 find duplicates files or folders.<br>
  | arg | description |
  | --- | --- |
@@ -15,6 +15,6 @@ $ bash dupes.sh -d /etc/usr/local -t folders -v --delete
 $ bash dupes.sh -d /var/ -t files 
 ```
  
- # nascompare
+ # nascompare.sh
  created to compare directory trees of two different nas storage (which should be identical) following a data migration 
  
