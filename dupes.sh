@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # gh - 2022
 # find dupl
@@ -26,4 +25,4 @@ while read i ; do
   esac
 done < <(echo $* | sed 's/ \-/\n-/g' )
 
-run $where $what $verbose $delete 
+run $where $what $verbose $delete
