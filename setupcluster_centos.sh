@@ -13,11 +13,11 @@ echo $pcscmds | sed 's/;/\n/g' | \
 done 
 } 
 
-
 name=$1 
 vipbo=$2
 maskcidr=$3
 outlog="./cluster.log"
+
 yum -y install corosync pacemaker pcs
 systemctl enable pcsd.service && systemctl start pcsd.service
 setup $name $vipbo $maskcidr $outlog
