@@ -24,4 +24,4 @@ compare directory trees (source v. target) with ability to:
 - copy files/folders if absent from target
 - delete files/folders if absent from source
 <br> 
-useful for validating data migration (ie. migrating data from an old NAS to a new)
+useful for validating data migration (ie. run after copying data from an old NAS to a new to confirm all data has been transferred)
