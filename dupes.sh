@@ -12,6 +12,7 @@ find $1 -mindepth 1 -type $type  \
   dupe=$(echo $i | tr "/" "\n"  | uniq -d | wc -l)
   [[ "$dupe" -gt "0" ]] && {
     echo -e "duplicate $2: $i" | tee -a dupes.log
+    [[ $4 = true ]] && sudo rm -rf $i 
   }
   done
 }
@@ -21,9 +22,8 @@ while read i ; do
     -d*|--delete) where=$(echo $i | awk '{ print $2 }' ) ;;
     -t*) what=$(echo $i | awk '{ print $2 }') ;;
     -v) verbose="-v" ;;
-    --delete) action="delete" ;;
-    --copy) action="copy" ;;
+    --delete) delete=true ;;
   esac
 done < <(echo $* | sed 's/ \-/\n-/g' )
 
-run $where $what $verbose $action 
+run $where $what $verbose $delete 
