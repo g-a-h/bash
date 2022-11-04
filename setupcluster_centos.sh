@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/evn bash
 # gh - 2022
 # setup pcs
 #######
