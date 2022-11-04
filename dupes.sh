@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # gh - 2022
 # find dupl
 #######
