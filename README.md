@@ -12,7 +12,7 @@ find duplicates files or folders.<br>
 
 
 ```bash
-$ bash dupes.sh -d /etc/usr/local -t folders -v --delete 
+$ bash dupes.sh -d /usr/local/etc -t folders -v --delete 
 ```
 ~ order of args does not matter 
 ```
