@@ -4,7 +4,7 @@
 # str2hex
 
 erro() {
-    echo "ERROR! no input received.."
+    echo "no input received.."
 }
 
 [[ $# -eq 0 ]] && erro || {
