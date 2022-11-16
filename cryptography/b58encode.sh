@@ -12,4 +12,4 @@ b58encode() {
      done
 }
 
-b5encode $1 
+b58encode $1 
