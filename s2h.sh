@@ -1,5 +1,4 @@
 #!/usr/local/env bash
-#!/usr/local/env bash
 # gh - 2022
 # str2hex
 
