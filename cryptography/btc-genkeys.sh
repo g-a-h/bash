@@ -6,7 +6,6 @@ hexup() {
   tr "[a-f]" "[A-F]"
 }
 
-pk=$(openssl ecparam -genkey -name secp256k1 -noout) 
 pk2hex() { 
   openssl ec -text <<<$1 2>/dev/null | grep -A3 priv | grep -v 'priv' \
   | fmt -120 | sed 's/[: ]//g' |  awk '{printf "%064s\n", $0}' | hexup
@@ -34,8 +33,8 @@ hex2addr() {
   addr=$(encode "$2$1$(chksum "$2$1")") && echo $addr
 }
 #######
-key=$(pk)
-pkhex=$(pk2hex $key) && echo -e "pubkey\t:\t$pkhex"
-hash=$(hashpub $key) && echo -e "hash\t:\t$hash"
+pk=$(openssl ecparam -genkey -name secp256k1 -noout) 
+pkhex=$(pk2hex $pk) && echo -e "pubkey\t:\t$pkhex"
+hash=$(hashpub $pk) && echo -e "hash\t:\t$hash"
 addr=$(hex2addr $hash "00") && echo -e "address\t:\t$addr" 
 wif=$(hex2addr $pkhex "80") && echo -e "wif\t:\t$wif"
