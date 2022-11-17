@@ -30,7 +30,7 @@ chksum() {
   xxd -p -r <<<"$1" | openssl dgst -sha256 -binary | openssl | dgst -sha256 -binary | xxd -p -c 80 | head -c 8 | hexup
 } 
 
-hex2addr() 
+hex2addr() { 
   addr=$(encode "$2$1$(chksum "$2$1")") && echo $addr
 }
 #######
