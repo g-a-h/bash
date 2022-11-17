@@ -26,7 +26,7 @@ encode() {
 }
 
 chksum() {
-  echo $1 | xxd -p -r | openssl dgst -sha256 -binary | openssl | dgst -sha256 -binary | xxd -p -c 80 | head -c 8 | hexup
+  echo $1 | xxd -p -r | openssl dgst -sha256 -binary | openssl dgst -sha256 -binary | xxd -p -c 80 | head -c 8 | hexup
 } 
 
 hex2addr() { 
