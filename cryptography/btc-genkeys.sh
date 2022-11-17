@@ -22,7 +22,7 @@ chksum() {
 
 base=($(echo {1..9} {A..Z} {a..z})) 
 encode() { 
-  echo $1 | sed -e 's/\(\(00\)*\).*/\1/' -e 's/00/1/g' bc <<<"ibase=16; n=$1; while(n>0) { n%3A ; n/=3A }" | tail -r \
+  echo $1 | sed -e 's/\(\(00\)*\).*/\1/' -e 's/00/1/g' | bc <<<"ibase=16; n=$1; while(n>0) { n%3A ; n/=3A }" | tail -r \
   | while read n
       do echo -n ${base[n+1]}
     done
