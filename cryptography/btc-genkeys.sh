@@ -30,7 +30,7 @@ chksum() {
 } 
 
 hex2addr() { 
-  addr=$(encode "$2$1$(chksum "$2$1")") && echo $addr
+  encode "$2$1$(chksum "$2$1")")
 }
 #######
 pk=$(openssl ecparam -genkey -name secp256k1 -noout) 
