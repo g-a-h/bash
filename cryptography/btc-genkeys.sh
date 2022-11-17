@@ -7,7 +7,7 @@ hexup() {
 }
 
 pk2hex() { 
-  openssl ec -text <<<$1 2>/dev/null | grep -A3 priv | grep -v 'priv' \
+  echo $1 | openssl ec -text 2>/dev/null | grep -A3 priv | grep -v 'priv' \
   | fmt -120 | sed 's/[: ]//g' |  awk '{printf "%064s\n", $0}' | hexup
 } 
 
@@ -26,7 +26,7 @@ encode() {
 }
 
 chksum() {
-  xxd -p -r <<<"$1" | openssl dgst -sha256 -binary | openssl | dgst -sha256 -binary | xxd -p -c 80 | head -c 8 | hexup
+  echo $1 | xxd -p -r | openssl dgst -sha256 -binary | openssl | dgst -sha256 -binary | xxd -p -c 80 | head -c 8 | hexup
 } 
 
 hex2addr() { 
