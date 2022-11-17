@@ -16,7 +16,7 @@ hashpub() {
   | openssl dgst -sha256 -binary | openssl dgst -rmd160 -binary | xxd -p -c 80 | hexup 
 } 
 
-base=$(echo {1..9} {A..Z} {a..z})
+base=($(echo {1..9} {A..Z} {a..z})) 
 encode() { 
   echo $1 | sed -e 's/\(\(00\)*\).*/\1/' -e 's/00/1/g' \
   | bc <<<"ibase=16; n=$1; while(n>0) { n%3A ; n/=3A }" | tail -r \
