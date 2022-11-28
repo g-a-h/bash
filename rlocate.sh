@@ -2,4 +2,4 @@
 # gh - 2022
 # real locate
 
-ls /* | xargs -n1000 -P1 -I % find % $1 2>/dev/null | grep $1
+ls /* | xargs -n1000 -P100 -I % find % $1 2>&1 | grep $1
